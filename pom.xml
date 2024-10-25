@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mumu</groupId>
+    <artifactId>RocketMQ-Spring-Plus</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.5</version>
+    </parent>
+
+    <dependencies>
+        <!-- RocketMQ Spring Boot Integration -->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>2.2.0</version> <!-- 版本号与当前RocketMQ Spring Boot支持的版本匹配 -->
+        </dependency>
+
+        <!-- Spring Web MVC (通常由Spring Boot Web Starter管理) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <!-- 版本号由Spring Boot父POM自动管理，因此无需显式指定 -->
+        </dependency>
+
+        <!-- Project Lombok, 用于简化Java对象的getter/setter等 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version> <!-- 这是常用的一个稳定版本 -->
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Spring Boot AutoConfigure (通常不需要直接依赖，由Spring Boot管理) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <!-- 版本号由Spring Boot父POM自动管理 -->
+        </dependency>
+
+        <!-- Alibaba Fastjson for JSON processing -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.78</version> <!-- 选择一个稳定版本 -->
+        </dependency>
+
+
+
+    </dependencies>
+
+</project>
