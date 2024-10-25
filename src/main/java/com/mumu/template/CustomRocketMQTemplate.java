@@ -5,7 +5,9 @@ package com.mumu.template;
 import com.alibaba.fastjson.JSONObject;
 import com.mumu.constant.RocketMQSysConstant;
 import com.mumu.domain.BaseMQMessage;
+import com.mumu.manager.TopicManager;
 import com.mumu.util.JsonUtil;
+import io.micrometer.core.instrument.MeterRegistry;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.rocketmq.client.producer.SendResult;
@@ -33,6 +35,18 @@ public class CustomRocketMQTemplate {
 
     @Autowired
     private RocketMQTemplate template;
+
+    @Autowired
+    private MeterRegistry meterRegistry;
+
+    @Autowired
+    private TopicManager topicManager;
+
+    public CustomRocketMQTemplate(RocketMQTemplate rocketMQTemplate, TopicManager topicManager, MeterRegistry meterRegistry) {
+        this.template = rocketMQTemplate;
+        this.topicManager = topicManager;
+        this.meterRegistry = meterRegistry;
+    }
 
     /**
      * 获取模板，如果封装的方法不够提供原生的使用方式
